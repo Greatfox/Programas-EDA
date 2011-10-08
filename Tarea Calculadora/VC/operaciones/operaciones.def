@@ -1,0 +1,9 @@
+LIBRARY operaciones.dll
+DESCRIPTION 'Dll ejemplo'
+HEAPSIZE 1024
+
+EXPORTS
+	DLLsumar		@1
+	DLLrestar		@2
+	DLLmultiplicar	@3
+	DLLdividir		@4
