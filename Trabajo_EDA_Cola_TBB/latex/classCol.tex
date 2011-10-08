@@ -1,0 +1,154 @@
+\hypertarget{classCol}{
+\section{Col Class Reference}
+\label{classCol}\index{Col@{Col}}
+}
+
+
+La clase \hyperlink{classCol}{Col} esta implementada usando la Cola del STL (queue).  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCol_ae7c7afeda66e5dda305cf0a05d770334}{Col} (int a)
+\begin{DoxyCompactList}\small\item\em Constructor de la Cola al que se le pasa el tamaño que esta tendrá. \item\end{DoxyCompactList}\item 
+void \hyperlink{classCol_af2942105b9353a3fcbd29368cb1dd5dc}{pon} (int num)
+\begin{DoxyCompactList}\small\item\em Función de tipo Void que se encarga de poner elementos en la cola. Solo permite insertar un maximo de elementos definido po la variable tam, si se quiere ingresar mas elementos de lo permitido, la cola se bloquea hasta que elimine un elemnto de ella y exista un espacio. \item\end{DoxyCompactList}\item 
+void \hyperlink{classCol_a7a07e296cc83a907dfad9c01ecf3ca09}{sa} ()
+\begin{DoxyCompactList}\small\item\em Función del tipo Void que se encarga de sacar elementos en la cola. \item\end{DoxyCompactList}\item 
+\hypertarget{classCol_a12f9da8f54dc49380f0d05a267bfaee7}{
+void \hyperlink{classCol_a12f9da8f54dc49380f0d05a267bfaee7}{imprimir} ()}
+\label{classCol_a12f9da8f54dc49380f0d05a267bfaee7}
+
+\begin{DoxyCompactList}\small\item\em Función del tipo Void que se encarga de imprimir los elementos dela cola. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+myMutex \hyperlink{classCol_a2a18e81311998ef10ccaaafa3fbcecdc}{poner}
+\item 
+myMutex \hyperlink{classCol_a3c134f83298f267b175a32b8b96dcfad}{sacar}
+\item 
+myMutex \hyperlink{classCol_a02956b9b92b2191de61400a0f53e1063}{liberar}
+\item 
+myMutex \hyperlink{classCol_aa1a849c7b1c00cc8a8c3dc5e0e1fe4c8}{ocupar}
+\item 
+int \hyperlink{classCol_af000355d031ef3ef88535dc8413036d4}{tam}
+\item 
+queue$<$ int $>$ \hyperlink{classCol_a6b757acfe15a0bb5bfc478a6cf5e9b1e}{cola}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+La clase \hyperlink{classCol}{Col} esta implementada usando la Cola del STL (queue). Esta clase nos permite a traves de sus funciones colocar y sacar elementos de una cola usando threads, y mutex para evitar que se saquen elementos de esta cuando no existe elementos o poner mas elementos de los que el tamaño maximo permite. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCol_ae7c7afeda66e5dda305cf0a05d770334}{
+\index{Col@{Col}!Col@{Col}}
+\index{Col@{Col}!Col@{Col}}
+\subsubsection[{Col}]{\setlength{\rightskip}{0pt plus 5cm}Col::Col (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classCol_ae7c7afeda66e5dda305cf0a05d770334}
+
+
+Constructor de la Cola al que se le pasa el tamaño que esta tendrá. 
+
+
+
+myMutex::scoped\_\-lock lock4(liberar)$<$ Lock al mutex Liberar para no se pueda sacar elementos cuando recien se ha creado la cola. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCol_af2942105b9353a3fcbd29368cb1dd5dc}{
+\index{Col@{Col}!pon@{pon}}
+\index{pon@{pon}!Col@{Col}}
+\subsubsection[{pon}]{\setlength{\rightskip}{0pt plus 5cm}Col::pon (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classCol_af2942105b9353a3fcbd29368cb1dd5dc}
+
+
+Función de tipo Void que se encarga de poner elementos en la cola. Solo permite insertar un maximo de elementos definido po la variable tam, si se quiere ingresar mas elementos de lo permitido, la cola se bloquea hasta que elimine un elemnto de ella y exista un espacio. 
+
+
+
+myMutex::scoped\_\-lock lock1(poner)$<$ Lock al mutex Poner para que solo una thread por vez pueda poner un elemento en la Cola.
+
+myMutex::scoped\_\-lock lock2(ocupar)$<$ Lock al mutex Ocupar para que no se pueda poner mas elementos cuando la cola a llegado a su tamaño máximo.
+
+cout$<$$<$\char`\"{}Esta lleno \char`\"{}$<$$<$endl;sleep(1)$<$ Mensaje que nos indica que la cola esta llena.
+
+lock4.release()$<$ Liberando al mutex Liberar que bloqueaba el poder sacar elementos cuando la pila recien es creada.
+
+cola.push(num)$<$ Poniendo un elemento en la cola.
+
+lock1.release()$<$ Liberando el mutex Poner para dejar que otra thread pueda colocar un elemento en la cola. 
+
+\hypertarget{classCol_a7a07e296cc83a907dfad9c01ecf3ca09}{
+\index{Col@{Col}!sa@{sa}}
+\index{sa@{sa}!Col@{Col}}
+\subsubsection[{sa}]{\setlength{\rightskip}{0pt plus 5cm}Col::sa (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classCol_a7a07e296cc83a907dfad9c01ecf3ca09}
+
+
+Función del tipo Void que se encarga de sacar elementos en la cola. 
+
+
+
+myMutex::scoped\_\-lock lock3(sacar)$<$ Lock al mutex Sacar para que solo una thread por vez pueda sacar un elemento de la Cola.
+
+myMutex::scoped\_\-lock lock1(liberar)$<$ Lock al mutex Liberar para que no se pueda sacar mas elementos cuando la cola este vacía.
+
+$<$ Mensaje que nos indica que la cola esta vacia.
+
+cola.pop()$<$ Sacando un elemento de la cola.
+
+lock3.release()$<$ Liberando el mutex Sacar para dejar que otra thread pueda sacar un elemento de la cola. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCol_a6b757acfe15a0bb5bfc478a6cf5e9b1e}{
+\index{Col@{Col}!cola@{cola}}
+\index{cola@{cola}!Col@{Col}}
+\subsubsection[{cola}]{\setlength{\rightskip}{0pt plus 5cm}queue$<$int$>$ {\bf Col::cola}}}
+\label{classCol_a6b757acfe15a0bb5bfc478a6cf5e9b1e}
+Declaramos la Cola Usando la Cola del STL. \hypertarget{classCol_a02956b9b92b2191de61400a0f53e1063}{
+\index{Col@{Col}!liberar@{liberar}}
+\index{liberar@{liberar}!Col@{Col}}
+\subsubsection[{liberar}]{\setlength{\rightskip}{0pt plus 5cm}myMutex {\bf Col::liberar}}}
+\label{classCol_a02956b9b92b2191de61400a0f53e1063}
+Declaramos un MUTEX (myMutex) con el nombre de liberar. \hypertarget{classCol_aa1a849c7b1c00cc8a8c3dc5e0e1fe4c8}{
+\index{Col@{Col}!ocupar@{ocupar}}
+\index{ocupar@{ocupar}!Col@{Col}}
+\subsubsection[{ocupar}]{\setlength{\rightskip}{0pt plus 5cm}myMutex {\bf Col::ocupar}}}
+\label{classCol_aa1a849c7b1c00cc8a8c3dc5e0e1fe4c8}
+Declaramos un MUTEX (myMutex) con el nombre de ocupar. \hypertarget{classCol_a2a18e81311998ef10ccaaafa3fbcecdc}{
+\index{Col@{Col}!poner@{poner}}
+\index{poner@{poner}!Col@{Col}}
+\subsubsection[{poner}]{\setlength{\rightskip}{0pt plus 5cm}myMutex {\bf Col::poner}}}
+\label{classCol_a2a18e81311998ef10ccaaafa3fbcecdc}
+Declaramos un MUTEX (myMutex) con el nombre de poner. \hypertarget{classCol_a3c134f83298f267b175a32b8b96dcfad}{
+\index{Col@{Col}!sacar@{sacar}}
+\index{sacar@{sacar}!Col@{Col}}
+\subsubsection[{sacar}]{\setlength{\rightskip}{0pt plus 5cm}myMutex {\bf Col::sacar}}}
+\label{classCol_a3c134f83298f267b175a32b8b96dcfad}
+Declaramos un MUTEX (myMutex) con el nombre de sacar. \hypertarget{classCol_af000355d031ef3ef88535dc8413036d4}{
+\index{Col@{Col}!tam@{tam}}
+\index{tam@{tam}!Col@{Col}}
+\subsubsection[{tam}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Col::tam}}}
+\label{classCol_af000355d031ef3ef88535dc8413036d4}
+Variable que indica el tamaño que tendra la cola. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Ultimo2.cpp\end{DoxyCompactItemize}
