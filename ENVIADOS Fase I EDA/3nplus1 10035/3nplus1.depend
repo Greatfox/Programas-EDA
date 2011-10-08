@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1304277122 source:h:\trabajosada\adaacm\3nplus1\3nplus1\main.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+	<string.h>
+	<algorithm>
+	<stdlib.h>
+	<math.h>
+

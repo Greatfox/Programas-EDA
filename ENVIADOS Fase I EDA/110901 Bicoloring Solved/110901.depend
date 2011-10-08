@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1302635536 source:i:\2011-1\ada\2. acm\110901\main.cpp
+	<iostream>
+	<vector>
+	<stdio.h>
+

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1302635662 source:j:\adaacm\steps\steps\main.cpp
+	<cmath>
+	<cstdio>
+	<iostream>
+
+1304369341 source:h:\trabajosada\adaacm\steps\steps\main.cpp
+	<cmath>
+	<cstdio>
+	<iostream>
+

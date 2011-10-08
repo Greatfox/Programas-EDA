@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1304433293 source:h:\trabajosada\adaacm\priarith\primarith\main.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+	<string.h>
+	<algorithm>
+	<stdlib.h>
+	<math.h>
+	<iostream.h>
+	<stdlib.h>
+
+1304433294 source:g:\adaacm\adaacm\priarith\primarith\main.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+	<string.h>
+	<algorithm>
+	<stdlib.h>
+	<math.h>
+	<iostream.h>
+	<stdlib.h>
+

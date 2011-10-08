@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1304374724 source:h:\trabajosada\adaacm\reverseadd\raa\main.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+	<string.h>
+	<algorithm>
+	<stdlib.h>
+	<math.h>
+
+1304453354 source:g:\adaacm\adaacm\reverseadd\raa\main.cpp
+	<iostream>
+	<string.h>
+	<math.h>
+	<vector.h>
+
