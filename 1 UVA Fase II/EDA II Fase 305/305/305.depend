@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1319847328 source:j:\enviados fase i eda\eda ii fase 305\305\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<string>
+	<vector>
+
