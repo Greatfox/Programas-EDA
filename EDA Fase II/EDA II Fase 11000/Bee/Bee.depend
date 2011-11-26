@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1319864902 source:j:\enviados fase i eda\eda ii fase 11000\bee\main.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<vector>
+	<sstream>
+	<math.h>
+
