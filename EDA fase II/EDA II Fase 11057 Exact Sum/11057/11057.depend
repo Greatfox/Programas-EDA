@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1319873048 source:j:\enviados fase i eda\eda ii fase 11057 exact sum\11057\main.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<vector>
+	<sstream>
+	<math.h>
+	<algorithm>
+

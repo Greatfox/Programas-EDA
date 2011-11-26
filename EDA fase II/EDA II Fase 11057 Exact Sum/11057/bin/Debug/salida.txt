@@ -1,0 +1,8 @@
+Peter should buy books whose prices are 20 and 40.
+
+Peter should buy books whose prices are 34 and 67.
+
+Peter should buy books whose prices are 14 and 23.
+
+Peter should buy books whose prices are 37 and 37.
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1319874884 source:j:\enviados fase i eda\eda ii fase 10340 all in all\10340\main.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<vector>
+	<sstream>
+	<math.h>
+	<algorithm>
+
